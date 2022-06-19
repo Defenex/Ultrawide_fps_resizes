@@ -25,7 +25,7 @@ If $AlreadyRunning = 4 Then
    $iStyle = BitOR(BitXOR($iStyle, $WS_MINIMIZEBOX, $WS_MAXIMIZEBOX, $WS_CAPTION, $WS_BORDER, $WS_SIZEBOX), $WS_POPUP) ;- Change Windowstyle to Fullscreen, while removing Border, Options, set Window as Popup
 
    _WinAPI_SetWindowLong($hWnd, $GWL_STYLE, $iStyle) ;-Set WindowLong Style
-   _WinAPI_SetWindowPos($hWnd, $HWND_TOP, @DesktopWidth/4, -1, @DesktopWidth/2, @DesktopHeight+2, $SWP_FRAMECHANGED) ;-Resize Window to -1 Pixel on X und Y Axis, to hide 1px white Bar around the Window, Overstretch by 2px each to hide white Bar around outer Edges
+   _WinAPI_SetWindowPos($hWnd, $HWND_TOP, -1, -1, @DesktopWidth+2, @DesktopHeight+2, $SWP_FRAMECHANGED) ;-Resize Window to -1 Pixel on X und Y Axis, to hide 1px white Bar around the Window, Overstretch by 2px each to hide white Bar around outer Edges
 EndIf
 
 ;-Set Dims to check back if files do not exist
@@ -85,5 +85,5 @@ Local $iStyle = _WinAPI_GetWindowLong($hWnd, $GWL_STYLE) ;-Set Style of Window
 
 $iStyle = BitOR(BitXOR($iStyle, $WS_MINIMIZEBOX, $WS_MAXIMIZEBOX, $WS_CAPTION, $WS_BORDER, $WS_SIZEBOX), $WS_POPUP) ;- Change Windowstyle to Fullscreen, while removing Border, Options, set Window as Popup
 
-_WinAPI_SetWindowPos($hWnd, $HWND_TOP, @DesktopWidth/4, -1, @DesktopWidth/2, @DesktopHeight+2, $SWP_FRAMECHANGED) ;-Resize Window to -1 Pixel on X und Y Axis, to hide 1px white Bar around the Window, Overstretch by 2px each to hide white Bar around outer Edges
 _WinAPI_SetWindowLong($hWnd, $GWL_STYLE, $iStyle) ;-Set WindowLong Style
+_WinAPI_SetWindowPos($hWnd, $HWND_TOP, -1, -1, @DesktopWidth+2, @DesktopHeight+2, $SWP_FRAMECHANGED) ;-Resize Window to -1 Pixel on X und Y Axis, to hide 1px white Bar around the Window, Overstretch by 2px each to hide white Bar around outer Edges
